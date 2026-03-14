@@ -3,21 +3,26 @@ package main
 import (
 	"fmt"
 
-	"gitlab.com/DaryaButuzova/practice2026/less2/stack"
+	"github.com/DaryaButuzova/practice2026/less2/queue"
+	"github.com/DaryaButuzova/practice2026/less2/stack"
 )
 
 func main() {
 
-	s := stack.NewStack(5)
+	// стек
+	st := stack.NewStack(5)
 
-	stack.Push(s, 10)
-	stack.Push(s, 20)
-	stack.Push(s, 30)
+	stack.Push(st, 10)
+	stack.Push(st, 20)
 
-	fmt.Println("Верхний элемент:", stack.Peek(s)) // Должно быть 30
+	fmt.Println("stack pop:", stack.Pop(st))
+	fmt.Println("stack peek:", stack.Peek(st))
 
-	fmt.Println("Извлекли:", stack.Pop(s)) // 30
-	fmt.Println("Извлекли:", stack.Pop(s)) // 20
+	// очередь
+	q := queue.NewQueue(5)
 
-	fmt.Println("Верхний элемент после извлечения:", stack.Peek(s)) // 10
+	queue.Push(q, 1)
+	queue.Push(q, 2)
+
+	fmt.Println("queue pop:", queue.Pop(q))
 }
